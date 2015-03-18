@@ -3,18 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <title>Riff</title>
-<!--   <link rel="stylesheet" href="styles/styles.css"> -->
+<link rel="stylesheet" href="styles.css">
 </head>
 <body ng-app='RiffApp'>
 
+<h1>riff</h1>
 
-<ng-view></ng-view>
+<ng-view class='view'></ng-view>
+
 
 <script src="bower_components/underscore/underscore.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
 
+
 <script src='app.js'></script>
+<!-- <script src='directive.js'></script> -->
 <script src='controller.js'></script>
 <script src='service.js'></script>
 </body>

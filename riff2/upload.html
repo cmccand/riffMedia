@@ -1,9 +1,20 @@
-<h2>Upload Your Riff</h2>
-<div class="upload">
-  <h5><input type="text" ng-model="newRiff.name" placeholder="Riff Name"></h3>
-  <p><textarea name="" ng-model="newProduct.description" id="" cols="30" rows="10">
-
-  </textarea></p>
-  <p><input type="text" ng-model="newProduct.price" placeholder="Price"></p>
-  <button ng-click="admin.addProduct(newProduct)">Create</button>
+<div id='bg'>
+  <img src="http://www.eskimoinsulation.com/images/sound-rooms.jpg" alt="">
 </div>
+<button class='record' ng-init="show = true" ng-show="show" ng-click="show=!show; myStyle={color:'red'}"></button>
+<button class='onAir' ng-style="myStyle">ON AIR</button>
+<img id='mic' src="Untitled.png" alt="" ng-show="!show">
+<div class='upload'>
+  <h2>Upload Your Riff</h2>
+  <form id="upload-form" enctype="multipart/form-data" >
+    <input type="hidden" name="params" value="{&quot;auth&quot;:{&quot;key&quot;:&quot;YOUR-AUTH-KEY&quot;},&quot;steps&quot;:{&quot;resize_to_75&quot;:{&quot;robot&quot;:&quot;\/image\/resize&quot;,&quot;use&quot;:&quot;:original&quot;,&quot;width&quot;:75,&quot;height&quot;:75}}}" />
+    <input type="file" name="file" />
+    <input type="submit" value="Upload" />
+  </form>
+
+</div>
+
+<form id="upload-form" action="http://api2.transloadit.com/assemblies" method="POST">
+  <input type="file" ng-model='file' />
+  <button ng-click="riffCtrl.upload(file)">Create</button>
+</form>

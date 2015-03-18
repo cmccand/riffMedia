@@ -2,7 +2,8 @@
   "use strict";
 
   angular.module('RiffApp', [
-  'ngTransloadit'
+  'ngRoute',
+  // 'ngUpload'
   ])
   .config(function ($routeProvider) {
     $routeProvider
